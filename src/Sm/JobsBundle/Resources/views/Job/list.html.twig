@@ -1,0 +1,14 @@
+<table class="jobs table table-striped table-hover">
+    <h1>hello</h1>
+    {% for entity in jobs %}
+        <tr class="{{ cycle(['even', 'odd'], loop.index) }}">
+            <td class="location">{{ entity.location }}</td>
+            <td class="position">
+                <a href="{{ path('Sm_job_show', { 'id': entity.id, 'company': entity.companyslug, 'location': entity.locationslug, 'position': entity.positionslug }) }}">
+                    {{ entity.position }}
+                </a>
+            </td>
+            <td class="company">{{ entity.company }}</td>
+        </tr>
+    {% endfor %}
+</table>

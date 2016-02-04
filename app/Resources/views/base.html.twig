@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Symfony Demo{% block subtitle %}{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}" />
+        {% block stylesheets %}
+            {{ include('includes/stylesheets.html.twig')}}
+        {% endblock %} 
+    </head>
+
+    <body id="{% block body_id %}{% endblock %}" class="{% block body_class %}{% endblock %}">
+        {% block header %}
+            <header>
+                {% block branding %}
+                    <div class="branding-wrapper jumbotron">
+                        <div class="branding container">
+                            <div class="site-name logo-block">
+                                <a href="/">{% image 'images/logo.png' %}<img src="{{ asset_url }}" alt="Site Logo" height="auto" width="auto" />{% endimage %}<h1>SynFoo<small>{% block section_name %}{% endblock %}</small></h1></a>
+                            </div>
+                            <form class="form-inline pull-right" role="search">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                    <button type="submit" class="btn btn-default">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                {% endblock %}
+                {% block navbar %}
+                    {{ include('includes/navbar.html.twig')}}
+                {% endblock %}
+            </header>
+        {% endblock %}
+
+        <section id="{% block page_id %}{% endblock %}" class="{% block page_class %}container{% endblock %}">
+            {# <div class="row"> #}
+                {% block page_content %}
+                {% endblock %}
+            {# </div> #}
+        </section>
+     
+     <footer>
+        {% block footer %}
+            {{ include('includes/footer.html.twig')}}
+        {% endblock %}
+    </footer>
+
+        {% block javascripts %}
+            {# uncomment the following lines to combine and minimize JavaScript assets with Assetic #}
+            {% javascripts filter="?jsqueeze" output="js/app.js"
+                "%kernel.root_dir%/Resources/assets/js/jquery-2.1.4.js"
+                "%kernel.root_dir%/Resources/assets/js/bootstrap-3.3.4.js"
+                "%kernel.root_dir%/Resources/assets/js/highlight.pack.js"
+                "%kernel.root_dir%/Resources/assets/js/sticky-nav.js" %}
+                <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+
+            <script>
+                $(document).ready(function() {
+                    hljs.initHighlightingOnLoad();
+                });
+            </script>
+        {% endblock %}
+
+    </body>
+</html>

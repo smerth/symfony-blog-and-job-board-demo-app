@@ -1,0 +1,41 @@
+# KNP Menu Builder and each instance of the sites defined menus as services:
+services:
+    app.menu_builder:
+        class: AppBundle\Menu\MenuBuilder
+        arguments: ["@knp_menu.factory"]
+
+    app.main_menu:
+        class: Knp\Menu\MenuItem # the service definition requires setting the class
+        factory: ["@app.menu_builder", createMainMenu]
+        arguments: ["@request_stack"]
+        tags:
+            - { name: knp_menu.menu, alias: main } # The alias is what is used to retrieve the menu
+
+    app.user_menu:
+        class: Knp\Menu\MenuItem # the service definition requires setting the class
+        factory: ["@app.menu_builder", createUserMenu]
+        arguments: ["@request_stack"]
+        tags:
+            - { name: knp_menu.menu, alias: user } # The alias is what is used to retrieve the menu
+
+
+# Greeter Service Example
+    appbundle.greeter:
+        class: %appbundle.greeter.class%
+        arguments: [%appbundle.greeter.greeting%]
+
+# Greeter Service Example
+parameters:
+    appbundle.greeter.class: AppBundle\Service\Greeter
+    appbundle.greeter.greeting: "Hello"
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+parameters:
+#    Sm.Jobs.example.class: Sm\JobsBundle\Example
+
+services:
+#    Sm.Jobs.example:
+#        class: %Sm.Jobs.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+#        calls:
+#            - [setService, [@service_id]]
+#        tags:
+#            - { name: twig.extension }
+#            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
+
+Sm\JobsBundle\Entity\Job:
+    properties:
+        category:
+            - NotBlank: ~
+        type:
+            - NotBlank: ~
+            - Choice: {callback: getTypeValues}
+        company:
+            - NotBlank: ~
+        position:
+            - NotBlank: ~
+        location:
+            - NotBlank: ~
+        description:
+            - NotBlank: ~
+        how_to_apply:
+            - NotBlank: ~
+        email:
+            - NotBlank: ~
+            - Email: ~
+        file:
+            - Image: ~

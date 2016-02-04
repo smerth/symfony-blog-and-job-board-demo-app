@@ -1,0 +1,16 @@
+parameters:
+    database_driver: pdo_mysql
+    database_host: 127.0.0.1
+    database_port: 3306
+    database_name: sm_symfony_demo
+    database_user: root
+    database_password: dataflow88
+
+    mailer_transport:   smtp
+    mailer_host:        localhost
+    mailer_user:
+    mailer_password:
+
+    locale: en
+
+    secret: 'a11ea3c771a84365a90d7db76c0bcfc92a543c43'

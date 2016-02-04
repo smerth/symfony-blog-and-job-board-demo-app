@@ -1,0 +1,14 @@
+# AppBundle/Resources/config/admin.yml
+services:
+    sonata.admin.post:
+        class: AppBundle\Admin\PostAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Blog Posts", label: "Post" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Post
+            - ~
+            # TODO - I think somehow the Sonata Admin needs to use the Admin/Blogcontroller in order for the Sluggify function and Author email to work, but how?
+            # - AppBundle:Cotroller\Admin\Blog
+        calls:
+            - [ setTranslationDomain, [AppBundle]]

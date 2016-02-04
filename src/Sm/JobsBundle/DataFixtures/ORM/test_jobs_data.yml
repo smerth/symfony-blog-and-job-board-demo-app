@@ -1,0 +1,209 @@
+Sm\JobsBundle\Entity\Category:
+  Cat1:
+    id: 1
+    name: Programming
+  Cat2:
+    id: 2
+    name: Management
+  Cat3:
+    id: 3
+    name: Sales
+  Cat4:
+    id: 4
+    name: Finance
+
+Sm\JobsBundle\Entity\Job:
+  Job1:
+    type: full-time
+    company: General Fixtures Co (not published)
+    logo: logo-17.jpg
+    url: http://www.gen-fix-co.com
+    position: Data Manager
+    location: San Francisco USA
+    description: 'Manage all our data as fixtures, coalate old copie of paper stuff into nice piles, assimilate information of use to the borgs'
+    how_to_apply: Send your relevant documents to us
+    token: 24241
+    is_public: 1
+    is_activated: 0
+    email: jobs@gen-fix-co.com
+    Category: @Cat2
+
+  Job{2..4}:
+    type: full-time
+    company: <company()> <companySuffix()>
+    logo: logo-<numberBetween(1, 26)>.jpg
+    url: <url()>
+    position: <text($maxNbChars = 20)>
+    location: <city()>, <country()>
+    description: <paragraph($nbSentences = 3)>
+    how_to_apply: <sentence($nbWords = 6)>
+    token: <uuid()>
+    is_public: 1
+    is_activated: 1
+    email: <email()>
+    Category: @Cat1
+
+  Job{5..7}:
+    type: part-time
+    company: <company()> <companySuffix()>
+    logo: logo-<numberBetween(1, 26)>.jpg
+    url: <url()>
+    position: <text($maxNbChars = 20)>
+    location: <city()>, <country()>
+    description: <paragraph($nbSentences = 3)>
+    how_to_apply: <sentence($nbWords = 6)>
+    token: <uuid()>
+    is_public: 1
+    is_activated: 1
+    email: <email()>
+    Category: @Cat1
+
+  Job{8..10}:
+    type: freelance
+    company: <company()> <companySuffix()>
+    logo: logo-<numberBetween(1, 26)>.jpg
+    url: <url()>
+    position: <text($maxNbChars = 20)>
+    location: <city()>, <country()>
+    description: <paragraph($nbSentences = 3)>
+    how_to_apply: <sentence($nbWords = 6)>
+    token: <uuid()>
+    is_public: 1
+    is_activated: 1
+    email: <email()>
+    Category: @Cat1
+
+  Job{11..13}:
+    type: full-time
+    company: <company()> <companySuffix()>
+    logo: logo-<numberBetween(1, 26)>.jpg
+    url: <url()>
+    position: <text($maxNbChars = 20)>
+    location: <city()>, <country()>
+    description: <paragraph($nbSentences = 3)>
+    how_to_apply: <sentence($nbWords = 6)>
+    token: <uuid()>
+    is_public: 1
+    is_activated: 1
+    email: <email()>
+    Category: @Cat2
+
+  Job{14..16}:
+    type: part-time
+    company: <company()> <companySuffix()>
+    logo: logo-<numberBetween(1, 26)>.jpg
+    url: <url()>
+    position: <text($maxNbChars = 20)>
+    location: <city()>, <country()>
+    description: <paragraph($nbSentences = 3)>
+    how_to_apply: <sentence($nbWords = 6)>
+    token: <uuid()>
+    is_public: 1
+    is_activated: 1
+    email: <email()>
+    Category: @Cat2
+
+  Job{17..19}:
+    type: freelance
+    company: <company()> <companySuffix()>
+    logo: logo-<numberBetween(1, 26)>.jpg
+    url: <url()>
+    position: <text($maxNbChars = 20)>
+    location: <city()>, <country()>
+    description: <paragraph($nbSentences = 3)>
+    how_to_apply: <sentence($nbWords = 6)>
+    token: <uuid()>
+    is_public: 1
+    is_activated: 1
+    email: <email()>
+    Category: @Cat2
+
+  Job{20..22}:
+    type: full-time
+    company: <company()> <companySuffix()>
+    logo: logo-<numberBetween(1, 26)>.jpg
+    url: <url()>
+    position: <text($maxNbChars = 20)>
+    location: <city()>, <country()>
+    description: <paragraph($nbSentences = 3)>
+    how_to_apply: <sentence($nbWords = 6)>
+    token: <uuid()>
+    is_public: 1
+    is_activated: 1
+    email: <email()>
+    Category: @Cat3
+
+  Job{23..25}:
+    type: part-time
+    company: <company()> <companySuffix()>
+    logo: logo-<numberBetween(1, 26)>.jpg
+    url: <url()>
+    position: <text($maxNbChars = 20)>
+    location: <city()>, <country()>
+    description: <paragraph($nbSentences = 3)>
+    how_to_apply: <sentence($nbWords = 6)>
+    token: <uuid()>
+    is_public: 1
+    is_activated: 1
+    email: <email()>
+    Category: @Cat3
+
+  Job{26..28}:
+    type: freelance
+    company: <company()> <companySuffix()>
+    logo: logo-<numberBetween(1, 26)>.jpg
+    url: <url()>
+    position: <text($maxNbChars = 20)>
+    location: <city()>, <country()>
+    description: <paragraph($nbSentences = 3)>
+    how_to_apply: <sentence($nbWords = 6)>
+    token: <uuid()>
+    is_public: 1
+    is_activated: 1
+    email: <email()>
+    Category: @Cat3
+
+  Job{29..31}:
+    type: full-time
+    company: <company()> <companySuffix()>
+    logo: logo-<numberBetween(1, 26)>.jpg
+    url: <url()>
+    position: <text($maxNbChars = 20)>
+    location: <city()>, <country()>
+    description: <paragraph($nbSentences = 3)>
+    how_to_apply: <sentence($nbWords = 6)>
+    token: <uuid()>
+    is_public: 1
+    is_activated: 1
+    email: <email()>
+    Category: @Cat4
+
+  Job{32..34}:
+    type: part-time
+    company: <company()> <companySuffix()>
+    logo: logo-<numberBetween(1, 26)>.jpg
+    url: <url()>
+    position: <text($maxNbChars = 20)>
+    location: <city()>, <country()>
+    description: <paragraph($nbSentences = 3)>
+    how_to_apply: <sentence($nbWords = 6)>
+    token: <uuid()>
+    is_public: 1
+    is_activated: 1
+    email: <email()>
+    Category: @Cat4
+
+  Job{35..38}:
+    type: freelance
+    company: <company()> <companySuffix()>
+    logo: logo-<numberBetween(1, 26)>.jpg
+    url: <url()>
+    position: <text($maxNbChars = 20)>
+    location: <city()>, <country()>
+    description: <paragraph($nbSentences = 3)>
+    how_to_apply: <sentence($nbWords = 6)>
+    token: <uuid()>
+    is_public: 1
+    is_activated: 1
+    email: <email()>
+    Category: @Cat4

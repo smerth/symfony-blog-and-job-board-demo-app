@@ -1,0 +1,535 @@
+/*!
+ *  Symfony Demo Application by @symfony
+ *  License: MIT License
+ */
+
+// Import bootstrap styles
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/flatly-theme/variables";
+
+// Import Site-wide Styles
+@import "site-wide/site.scss";
+
+// Import Styles for each section
+@import "site-sections/job-board/admin";
+@import "site-sections/job-board/job";
+@import "site-sections/job-board/jobs";
+@import "site-sections/job-board/main";
+@import "site-sections/job-board/job_form.scss";
+
+
+//
+// Typography
+// --------------------------------------------------
+
+p, ul, ol {
+  font-size: $font-size-large;
+  margin-bottom: 1.5em;
+}
+
+li {
+  margin-bottom: .5em;
+}
+
+// Code
+code {
+  background: $gray-lighter;
+  color: $brand-primary;
+}
+
+// Text labels
+.text-danger,
+.text-danger:hover {
+  // color: $brand-danger;
+}
+
+//
+// Icons
+// --------------------------------------------------
+
+i {
+  margin-right: .25em;
+}
+
+//
+// Page elements
+// --------------------------------------------------
+
+body {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+// Header
+header {
+  margin-bottom: 2em;
+
+  ul.nav li {
+    margin-bottom: 0;
+  }
+}
+
+// Body contents
+.page-content-container {
+  -webkit-flex: 1;
+  flex: 1;
+
+  // needed to prevent pages with a very small height and browsers not supporting flex
+  min-height: 600px;
+
+  #main h1,
+  #main h2 {
+    margin-top: 0;
+  }
+}
+
+// Sidebar
+#sidebar {
+  .section {
+    margin-bottom: 2em;
+  }
+
+  p {
+    font-size: $font-size-base;
+
+    & + p {
+      margin: 1.5em 0 0;
+    }
+  }
+}
+
+// Footer
+footer {
+
+  // background: #D6EAF0;
+
+
+  margin-top: 2em;
+  padding-top: 2em;
+  padding-bottom: 0;
+  .cityscape {
+    overflow: auto;
+    height: 150px;
+ 
+  }
+
+  p {
+    color: #fff;
+    font-size: $font-size-small;
+    margin-bottom: .25em;
+  }
+
+  .social-icons {
+
+    i.fa {
+      color: #fff;
+      font-size: 1.5em;
+      margin-left: .5em;
+    }
+  }
+}
+
+// Source Code Modal Window
+#sourceCodeModal {
+  h3 {
+    font-size: $font-size-large;
+    margin-top: 0;
+
+    small {
+      color: $gray-dark;
+      font-size: 80%;
+    }
+  }
+
+  pre {
+    margin-bottom: 2em;
+    padding: 0;
+  }
+}
+
+//
+// Forms
+// --------------------------------------------------
+
+// Form errors
+.form-group.has-error .form-control {
+  // border-color: $brand-danger;
+}
+.form-group.has-error .control-label {
+  // color: $brand-danger;
+}
+.form-group.has-error .help-block {
+  background-color: red;
+  color: #FFF;
+  font-size: $font-size-base;
+  padding: 1em;
+
+  ul {
+    margin-bottom: 0;
+  }
+}
+
+//
+// Page: 'homepage'
+// --------------------------------------------------
+body#homepage {
+  text-align: center;
+}
+
+//
+// Page: 'login'
+// --------------------------------------------------
+body#login {
+  #login-users-help p {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .label {
+      margin-right: 5px;
+    }
+
+    .console {
+      display: block;
+      margin: 5px 0;
+      padding: 10px;
+    }
+  }
+}
+
+//
+// Page: 'blog_index'
+// --------------------------------------------------
+body#blog_index {
+  h1 {
+    margin-bottom: .5em;
+  }
+
+  article.post {
+    margin-bottom: 3em;
+  }
+}
+
+//
+// Page: 'blog_post_show'
+// --------------------------------------------------
+body#blog_post_show {
+  h3 {
+    margin-bottom: .75em;
+  }
+
+  #post-add-comment {
+    margin: 2em 0;
+
+    p {
+      margin-bottom: 0;
+
+      a.btn {
+        margin-right: .5em;
+      }
+    }
+  }
+
+  .post-comment {
+    margin-bottom: 2em;
+
+    h4 {
+      font-size: $font-size-small;
+      line-height: $line-height-base;
+      margin-top: 0;
+
+      strong {
+        display: block;
+      }
+    }
+  }
+}
+
+//
+// Page: 'comment_form_error'
+// --------------------------------------------------
+body#comment_form_error {
+  h1.text-danger {
+    margin-bottom: 1em;
+  }
+}
+
+//
+// Page: 'admin_post_index'
+// --------------------------------------------------
+body#admin_post_index {
+  .item-actions {
+    white-space: nowrap;
+
+    a.btn + a.btn {
+      margin-left: 4px;
+    }
+  }
+}
+
+//
+// Page: 'admin_post_show'
+// --------------------------------------------------
+body#admin_post_show {
+}
+
+
+//
+//
+// MY STYLE ADDITIONS START HERE
+//
+//
+
+
+// MY ADDITIONS TO ORIGINAL FILE...
+.navbar-default {
+  background: rgba(25, 44, 59, 1);
+a {
+  color: white;
+}
+}
+.navbar-default .navbar-nav > li > a {
+  color: white;
+}
+
+.navbar-default.go-to-top {
+  background: rgba(25, 44, 59, .8);
+  height: 50px;
+  overflow: visible;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+nav {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+
+
+
+.jumbotron {
+  // background: rgba(19, 34, 118, 1) url("images/jumbo-bg.jpg");
+  background: rgba(0, 0, 0, 1) url("images/paris.png") no-repeat bottom;
+// background: #95CCFD url("images/paris.png");
+  
+background-size: contain;
+  
+
+  margin-bottom: 0;
+
+  h1 {
+    display: inline;
+    line-height: 100px;
+  }
+
+  a {
+    color: rgb(255, 255, 255);
+
+    &:hover {
+      text-decoration: none;
+    }
+
+  }
+
+  img {
+    float: left;
+    height: 100px;
+    margin-right: 2em;
+    width: auto;
+  }
+}
+
+.btn-group {
+  float: right;
+}
+
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.navbar-brand {
+  display: none;
+  margin-left: 15px;
+  padding: 2.5px 0;
+
+  img {
+    display: inline;
+    float: left;
+    margin-right: 1em;
+  }
+
+  h1 {
+    display: inline-block;
+    margin: 0 !important;
+  }
+
+  @media (min-width: $grid-float-breakpoint) {
+    .navbar > .container &,
+    .navbar > .container-fluid & {
+      // margin-left: -$navbar-padding-horizontal;
+      margin-left: 0;
+    }
+  }
+}
+
+.label-rem-me {
+  margin-left: 1em;
+}
+
+.logo-block {
+  display: inline-block;
+}
+
+.navbar {
+  border: 0;
+  border-radius: 0;
+}
+
+.register {
+  background: rgba(116, 160, 201, 1);
+}
+
+.login {
+  background: rgba(40, 187, 156, 1);
+}
+
+.separator {
+  margin: 0 .5em;
+}
+
+
+// MY BOOTSTRAP VARIABLE OVERRIDES
+// SO MUCH BULL SHIT
+// YOU SHOULD BE ABLE TO OVERRIDE THE VARIABLES IN BOOTSTRAP FOLDER
+// ASSETIC ONLY SEEMS TO BE COMPILING THE MAIN.SCSS FILE NOT ANYTHING IN THE BOOTSTRAP FOLDER
+// WHAT A FUCKING PAIN IN THE ASS SYMFONY IS
+// DRUPAL IS MUCH BETTER
+
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: $font-family-serif;
+}
+
+
+.nav li
+
+{
+a:hover {
+color: #5BB85C;
+  // font-weight: bold;
+}
+}
+
+.btn {
+
+margin-left: 0.5em;
+
+}
+
+.logo-block {
+  // background: rgba(0,0,0, .5);
+  // padding: 1em;
+  // border-radius: 10px;
+
+}
+footer.container {
+  padding-bottom: 0px;
+}
+
+footer .cityscape {
+    background: url("images/l-sky.svg") no-repeat -10px bottom;
+  background-size: 105%;
+}
+// .footer-copyright,
+// .footer-resources
+.footer-bottom {
+margin-top: -2px;
+  padding: 1em inherit;
+  overflow: auto;
+  background: #2C3E50;
+}
+
+// from jobs
+
+
+.feed {
+  background: transparent url(../images/feed.png) no-repeat 0 0;
+  padding-left: 20px;
+}
+
+.help {
+  color: rgb(181, 181, 181);
+  font-size: 80%;
+  font-style: italic;
+  margin: .5em 0;
+}
+
+.search .help {
+  color: rgb(255, 255, 255);
+}
+
+.error_list {
+  color: rgb(255, 0, 0);
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+.flash_notice {
+  margin: 3px 0;
+  padding: 7px;
+  background-color: rgb(204, 255, 204);
+}
+
+.flash_error {
+  margin: 3px 0;
+  padding: 7px;
+  background-color: rgb(255, 51, 51);
+  color: #fff;
+}
+header h1 small {
+  color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a:hover, 
+.navbar-default .navbar-nav > li > a:focus {
+  color: #5BB85C;
+}
+#homepage .jumbotron p {
+  color: #5BB85C;
+}
+.form-process-buttons {
+  margin-top: 1.5em;
+
+}
+.job-description img {
+  max-width: 150px;
+}

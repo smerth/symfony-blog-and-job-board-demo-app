@@ -1,0 +1,11 @@
+SmJobsBundle_category:
+    pattern: /category/{slug}/{page}
+    defaults: { _controller: JobsBundle:Category:show, page: 1 }
+
+Jobs_Sm_job:
+    resource: "@JobsBundle/Resources/config/routing/job.yml"
+    prefix:   /Sm_job
+
+Jobs_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: JobsBundle:Default:index }

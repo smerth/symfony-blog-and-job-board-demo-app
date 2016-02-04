@@ -1,0 +1,3 @@
+hanzi_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: HanziBundle:Default:index }

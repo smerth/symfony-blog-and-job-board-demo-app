@@ -1,0 +1,43 @@
+Sm_job:
+    path:     /
+    defaults: { _controller: "JobsBundle:Job:index" }
+
+Sm_job_show:
+    pattern:  /{company}/{location}/{id}/{position}
+    defaults: { _controller: "JobsBundle:Job:show" }
+    requirements:
+        id:  \d+
+
+Sm_job_preview:
+    pattern:  /{company}/{location}/{token}/{position}
+    defaults: { _controller: "JobsBundle:Job:preview" }
+    requirements:
+        token:  \w+
+
+Sm_job_new:
+    path:     /new
+    defaults: { _controller: "JobsBundle:Job:new" }
+
+Sm_job_create:
+    path:     /create
+    defaults: { _controller: "JobsBundle:Job:create" }
+    methods:  POST
+
+Sm_job_edit:
+    pattern:  /{token}/edit
+    defaults: { _controller: "JobsBundle:Job:edit" }
+
+Sm_job_update:
+    pattern:  /{token}/update
+    defaults: { _controller: "JobsBundle:Job:update" }
+    requirements: { _method: post }
+
+Sm_job_delete:
+    pattern:  /{token}/delete
+    defaults: { _controller: "JobsBundle:Job:delete" }
+    requirements: { _method: post }
+
+Sm_job_publish:
+    pattern:  /{token}/publish
+    defaults: { _controller: "JobsBundle:Job:publish" }
+    requirements: { _method: post }

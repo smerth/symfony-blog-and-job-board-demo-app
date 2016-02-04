@@ -1,0 +1,63 @@
+{# app/Resources/views/admin/layout.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block subtitle %}
+   - Blog
+{% endblock %}
+
+{% block stylesheets %}
+  {{ parent() }}
+
+{% endblock %}
+
+{% block header_navigation_links %}
+    <li>
+        <a href="{{ path('admin_post_index') }}">
+            <i class="fa fa-list-alt"></i> Post List
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('blog_index') }}">
+            <i class="fa fa-home"></i> Back to blog
+        </a>
+    </li>
+{% endblock %}
+
+{% block body_id 'blog' %}
+
+{% block page_content %}
+    <div class="row">
+        <div id="main" class="col-sm-9">
+            {% block main %}
+            {% endblock %}
+        </div>
+
+        <div id="sidebar" class="col-sm-3">
+            {% block sidebar %}
+                <div class="section about">
+                    <div class="well well-lg">
+                        <p>
+                            This is a <strong>demo application</strong> built in the
+                            Symfony Framework to illustrate the recommended way of
+                            developing Symfony applications.
+                        </p>
+                        <p>
+                            For more information, check out the
+                            <a href="http://symfony.com/doc">Symfony Documentation</a>.
+                        </p>
+                    </div>
+                </div>
+            {% endblock %}
+        </div>
+{% endblock %}
+
+{% block footer %}
+{{ parent() }}
+
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+
+{% endblock %}
+

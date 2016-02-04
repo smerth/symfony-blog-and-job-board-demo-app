@@ -1,0 +1,10 @@
+sonata_admin:
+    title:      Syn Foo
+    title_logo: /images/logo.png
+    templates:
+        dashboard: AppBundle:Admin:dashboard.html.twig
+
+    dashboard:
+        blocks:
+            # display a dashboard block
+             - { position: left, type: sonata.admin.block.admin_list }

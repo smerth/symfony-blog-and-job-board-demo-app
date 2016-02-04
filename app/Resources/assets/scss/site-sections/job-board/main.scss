@@ -1,0 +1,88 @@
+.job-board-body {
+  header {
+    margin-bottom: 0;
+  }
+
+  .navbar {
+    margin-bottom: 0;
+  }
+
+  footer {
+    margin-top: 0;
+  }
+
+}
+
+.job-board-page {
+  font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+
+  .job-search {
+    background: rgb(23, 111, 149);
+  }
+
+  .main {
+    padding-top: 2em;
+
+    h1 {
+      background: rgb(23, 111, 149);
+      border-radius: 5px;
+      color: rgb(255, 255, 255);
+      font-size: 24px;
+      line-height: 32px;
+      margin-bottom: 1px;
+      margin-top: 10px;
+      padding: 0 15px;
+      text-transform: uppercase;
+
+      a {
+        color: rgb(255, 255, 255);
+      }
+    }
+  } // end #main
+
+  aside {
+    padding-top: 2em;
+  } // end aside
+
+  .job-board-footer {
+    clear: both;
+    padding-top: 5em;
+
+    .content {
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    ul {
+      display: inline;
+      padding-left: 0;
+    }
+
+    li {
+      display: inline;
+      list-style: none none;
+      margin-right: 15px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: rgb(0, 0, 0);
+      text-decoration: underline;
+    }
+
+    .symfony {
+      color: rgb(102, 102, 102);
+      float: right;
+
+      img {
+        vertical-align: middle;
+      }
+    }
+  } // end job-board-footer
+
+} // end job_board_page
+
+

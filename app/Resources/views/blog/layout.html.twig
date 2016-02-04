@@ -1,0 +1,54 @@
+{# app/Resources/views/blog/layout.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block subtitle %}
+	 - Blog
+{% endblock %}
+
+
+{% block section_name %} Blog{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+
+{% endblock %}
+
+{% block body_id 'blog' %}
+
+{% block page_content %}
+
+        <div id="main" class="col-sm-8">
+            {% block main %}
+            {% endblock %}
+        </div>
+
+        <div id="sidebar" class="col-sm-4">
+            {% block sidebar %}
+                {#<div class="section about">#}
+                    {#<div class="well well-lg">#}
+                        {#<p>#}
+                            {#This is a <strong>demo application</strong> built in the#}
+                            {#Symfony Framework to illustrate the recommended way of#}
+                            {#developing Symfony applications.#}
+                        {#</p>#}
+                        {#<p>#}
+                            {#For more information, check out the#}
+                            {#<a href="http://symfony.com/doc">Symfony Documentation</a>.#}
+                        {#</p>#}
+                    {#</div>#}
+                {#</div>#}
+            {% endblock %}
+        </div>
+
+{% endblock %}
+
+{% block footer %}
+{{ parent() }}
+
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+
+{% endblock %}
+

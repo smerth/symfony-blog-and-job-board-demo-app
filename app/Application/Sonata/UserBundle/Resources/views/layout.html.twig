@@ -1,0 +1,42 @@
+{# app/Resources/views/blog/layout.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block subtitle %}
+	 - Blog
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+
+{% endblock %}
+
+{% block body_id 'blog' %}
+
+{% block page_content %}
+
+    {#<div id="sidebar" class="col-sm-3">#}
+        {#{% block sonata_profile_menu %}#}
+            {#{{ sonata_block_render({'type': 'sonata.user.block.menu'}, {'current_uri': app.request.requestUri}) }}#}
+        {#{% endblock %}#}
+    {#</div>#}
+        <div id="main" class="col-sm-12">
+            {#{% block main %}#}
+                {% block fos_user_content %}
+                {% endblock %}
+            {#{% endblock %}#}
+        </div>
+
+
+
+{% endblock %}
+
+{% block footer %}
+{{ parent() }}
+
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+
+{% endblock %}
+

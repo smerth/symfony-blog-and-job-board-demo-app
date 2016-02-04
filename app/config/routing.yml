@@ -1,0 +1,95 @@
+hanzi:
+    resource: "@HanziBundle/Resources/config/routing.yml"
+    prefix:   /
+
+# These first lines load the all routes defined as @Route() annotations in any
+# controller defined inside the src/AppBundle/Controller/ directory. Controllers
+# are loaded recursively, so you can separate them into subdirectories.
+# If you don't like to add annotations in your applications, you can also define
+# the routes in YAML, XML or PHP files.
+# See http://symfony.com/doc/current/book/routing.html
+app:
+    resource: @AppBundle/Controller/
+    type:     annotation
+
+# These lines define a route using YAML configuration. The controller used by
+# the route (FrameworkBundle:Template:template) is a convenient shortcut when
+# the template can be rendered without executing any logic in your own controller.
+# See http://symfony.com/doc/current/cookbook/templating/render_without_controller.html
+homepage:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    'homepage/homepage.html.twig'
+
+# Paths for FOS User bundle
+#fos_user_security:
+#    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+#fos_user_profile:
+#    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+#    prefix: /profile
+#fos_user_register:
+#    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+#    prefix: /register
+#fos_user_resetting:
+#    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+#    prefix: /resetting
+#fos_user_change_password:
+#    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+#    prefix: /change-password
+
+sonata_user_security:
+    resource: "@SonataUserBundle/Resources/config/routing/sonata_security_1.xml"
+
+sonata_user_resetting:
+    resource: "@SonataUserBundle/Resources/config/routing/sonata_resetting_1.xml"
+    prefix: /resetting
+
+sonata_user_profile:
+    resource: "@SonataUserBundle/Resources/config/routing/sonata_profile_1.xml"
+    prefix: /profile
+
+sonata_user_register:
+    resource: "@SonataUserBundle/Resources/config/routing/sonata_registration_1.xml"
+    prefix: /register
+
+sonata_user_change_password:
+    resource: "@SonataUserBundle/Resources/config/routing/sonata_change_password_1.xml"
+    prefix: /profile
+
+# Paths for Sonata user
+soanata_user:
+    resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
+    prefix: /admin
+sonata_user_impersonating:
+    pattern: /
+    defaults: { _controller: SonataPageBundle:Page:catchAll }
+
+# Route to clear Sonata Cache - which I don't know how to configure
+sonata_cache_cache:
+    resource: '@SonataCacheBundle/Resources/config/routing/cache.xml'
+    prefix: /
+
+# Sonata Admin Bundle
+admin:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    prefix: /admin
+
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin
+
+# Job Board Project
+Jobs:
+    resource: "@JobsBundle/Resources/config/routing.yml"
+    prefix:   /
+
+# src/Sm/JobsBundle/Resources/config/routing.yml
+SmJobsBundle_job:
+    resource: "@JobsBundle/Resources/config/routing/job.yml"
+    prefix: /job
+
+SmJobsBundle_homepage:
+    pattern:  /
+    defaults: { _controller: JobsBundle:Job:index }

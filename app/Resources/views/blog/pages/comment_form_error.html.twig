@@ -1,0 +1,24 @@
+{# app/Resources/views/blog/pages/comment_form_error.html.twig #}
+{% extends 'blog/layout.html.twig' %}
+
+{# Once your SASS is running change this ID to the class below, and delete it.
+A section should have an ID assigned in the layout. 
+A page should have a class assigned in the page.twig file. 
+The combination of the two should be enough... #}
+{% block body_id 'comment_form_error' %}
+
+{% block body_class 'comment_form_error' %}
+
+
+{% block main %}
+    <h1 class="text-danger">There was an error publishing your comment</h1>
+
+    <div class="well">
+        {{ include('blog/pages/comment_form.html.twig') }}
+    </div>
+{% endblock %}
+
+{% block sidebar %}
+    {{ parent() }}
+    {{ show_source_code(_self) }}
+{% endblock %}

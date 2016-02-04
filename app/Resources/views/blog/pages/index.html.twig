@@ -1,0 +1,28 @@
+{# app/Resources/views/blog/pages/index.html.twig #}
+{% extends 'blog/layout.html.twig' %}
+
+{# Once your SASS is running change this ID to the class below, and delete it.
+A section should have an ID assigned in the layout. 
+A page should have a class assigned in the page.twig file. 
+The combination of the two should be enough... #}
+{% block body_id 'blog_index' %}
+
+{% block body_class 'blog_index' %}
+
+{% block main %}
+    {% for post in posts %}
+        <article class="post">
+            <h2>
+                <a href="{{ path('blog_post', { slug: post.slug }) }}">
+                    {{ post.title }}
+                </a>
+            </h2>
+            {{ post.summary|md2html }}
+        </article>
+    {% endfor %}
+{% endblock %}
+
+{% block sidebar %}
+    {{ parent() }}
+    {{ show_source_code(_self) }}
+{% endblock %}
