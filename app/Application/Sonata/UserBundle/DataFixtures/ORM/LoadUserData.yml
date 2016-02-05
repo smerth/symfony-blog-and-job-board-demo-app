@@ -1,0 +1,31 @@
+# src/Application/Sonata/UserBundle/DataFixtures/ORM/LoadUserData.yml
+useradmin:
+    username: admin
+    firstname: David
+    lastname: Jacquel
+    date_of_birth: 1980-10-20
+    gender: m
+    phone: +99999999999
+    email: admin@example.com
+    plainPassword: admin
+    isAdmin: true
+
+useralice:
+    username: alice
+    firstname: Alice
+    lastname: Bonnon
+    date_of_birth: 1968-12-27
+    gender: f
+    phone: +33675982044
+    email: alice@example.com
+    plainPassword: alice
+
+userbob:
+    username: bob
+    firstname: Bob
+    lastname: Leponge
+    date_of_birth: 1976-10-24
+    gender: m
+    phone: +33898982044
+    email: bob@example.com
+    plainPassword: bob

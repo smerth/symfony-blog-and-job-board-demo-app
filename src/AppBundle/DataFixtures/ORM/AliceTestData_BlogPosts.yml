@@ -4,16 +4,16 @@ AppBundle\Entity\Post:
       slug: <realText($maxNbChars = 50)>
       summary: <realText($maxNbChars = 150)>
       content: <realText($maxNbChars = 1000)>
-      authorEmail: @Admin->email
+      authorEmail: admin@example.com
   Post{31..60}:
       title: <realText($maxNbChars = 50)>
       slug: <realText($maxNbChars = 50)>
       summary: <realText($maxNbChars = 150)>
       content: <realText($maxNbChars = 1000)>
-      authorEmail: @Editor->email
+      authorEmail: alice@example.com
   Post{61..90}:
       title: <realText($maxNbChars = 50)>
       slug: <realText($maxNbChars = 50)>
       summary: <realText($maxNbChars = 150)>
       content: <realText($maxNbChars = 1000)>
-      authorEmail: @Blogger->email
+      authorEmail: bob@example.com
