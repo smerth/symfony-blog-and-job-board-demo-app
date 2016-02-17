@@ -37,7 +37,7 @@ Some of the projects I have integrated into this Symfony demo are:
 
 ## Data
 
-The demo data is found in each app's fixture folder.  Jobs and blog posts use fakr data but users data employs an AppFixture that formats according to the needs of FOS User bundler user class.
+The demo data is by each app's appFixture.php file.  Jobs and blog posts use fakr data but users data employs an AppFixture that formats according to the needs of FOS User bundler user class.
 
 So, with a little magic from Doctrine you can get it up and running in a flash.
 
