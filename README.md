@@ -1,28 +1,23 @@
 Symfony Orchestration
 ========================
 
-Symfony Orchestration is an app that integrates the following projects.
+# About
 
-FOS User Bundle
+This project started out as a study site for Symfony based on the Symfony Demo installation.  Then a job-board was added based on the Jobeet tutorial. Each App has its own folder:
 
-FOS Rest Bundle
+Symfony Demo - `src/AppBundle`
 
-Sonata Admin Bundle
+Jobeet Tutorial - `src/Sm/JobsBundle`
 
-Slugify
+So you can uninstall either or both.  You can add your own app, or use this project to see how I put things together (which may or may not be the best way...)
 
-Faker
+`app/Application/Sonata/UserBundle` is where you will find the admin backend installed since it is shared with any other app you install in the project.
 
-Alice
+`app/Resources` is where all the templating and front end work is done.  The Jobeet tutorial has its own folder `JobsBundle` but the Symfony Demo (the Blog app) relies on templates in `app/Resources/views`
 
-KPN Menu
+`Resources` could be better organized so each app has its own folder (like JobsBundle.)  That would make is easier to add and delete apps as needed.
 
-Assetic
+Some of the projects integrated into Symfony Orchestration are: FOS User Bundle, FOS Rest Bundle, Sonata Admin Bundle, Slugify, Faker, Alice, KPN Menu, Assetic, Scssphp, Php markdown, Swiftmailer
 
-Scssphp
 
-Php markdown
-
-Swiftmailer
-
-As such it is a good starting point for a Symfony project that needs an Admin back-end, a menu system, User management, and flexible data fixtures.
+# Installation
