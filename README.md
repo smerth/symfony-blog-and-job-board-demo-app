@@ -1,5 +1,132 @@
+
 Symfony Demo
 ========================
+
+
+
+Clone the app
+
+```bash
+git clone https://github.com/smerth/symfony-blog-and-job-board-demo-app.git
+```
+
+Set up empty database
+
+Install dependancies
+
+```bash
+composer install
+```
+
+
+
+create the schema in your empty database
+
+```bash
+app/console doctrine:schema:create
+```
+
+
+
+install assets
+
+```bash
+app/console assets:install
+```
+
+
+
+clear cache
+
+```bash
+app/console cache:clear
+```
+
+
+
+run the app
+
+```bash
+app/console server:run
+```
+
+
+
+Now you have an fully working app.  But there is no data...
+
+
+
+Create dummy users, blog posts and job listings
+
+```bash
+app/console doctrine:fixtures:load
+```
+
+
+
+
+
+Test the login using the admin credentials and 
+
+
+
+Users are created from data loaded from 
+
+@ /app/Application/Sonata/UserBundle/DataFixtures/ORM/LoadUserData.yml
+
+```yml
+# src/Application/Sonata/UserBundle/DataFixtures/ORM/LoadUserData.yml
+useradmin:
+    username: admin
+    firstname: David
+    lastname: Jacquel
+    date_of_birth: 1980-10-20
+    gender: m
+    phone: +99999999999
+    email: admin@example.com
+    plainPassword: admin
+    isAdmin: true
+
+useralice:
+    username: alice
+    firstname: Alice
+    lastname: Bonnon
+    date_of_birth: 1968-12-27
+    gender: f
+    phone: +33675982044
+    email: alice@example.com
+    plainPassword: alice
+
+userbob:
+    username: bob
+    firstname: Bob
+    lastname: Leponge
+    date_of_birth: 1976-10-24
+    gender: m
+    phone: +33898982044
+    email: bob@example.com
+    plainPassword: bob
+```
+
+
+
+
+
+
+
+
+
+
+
+## What can you do on the site?
+
+Users with admin status can enter and publish blog posts.  Admin users can also log in and manage the site content: blog posts, comments, job listings and users.
+
+Regular users can login and comment on blog posts.
+
+Anonymous users should be able to post a job listing (currently broken.)
+
+
 
 # About
 
